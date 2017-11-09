@@ -408,20 +408,23 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 100012, guid: 92dc064c4b0c04d48be413e417a880c6, type: 3}
   m_PrefabInternal: {fileID: 51063014}
---- !u!114 &13065518
-MonoBehaviour:
+--- !u!95 &13065518
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 13065517}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19a41db962aaca14f851e52a6b728cb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  forwardSpeed: 10
-  backwardSpeed: 3
-  horizontalSpeed: 2
+  m_Avatar: {fileID: 9000000, guid: 92dc064c4b0c04d48be413e417a880c6, type: 3}
+  m_Controller: {fileID: 9100000, guid: 33f9597a8c607544e88ab78a7194d50c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!143 &13065519
 CharacterController:
   m_ObjectHideFlags: 0
@@ -434,28 +437,25 @@ CharacterController:
   serializedVersion: 2
   m_Height: 1.8
   m_Radius: 0.4
-  m_SlopeLimit: 90
+  m_SlopeLimit: 0
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1, z: 0.05}
---- !u!95 &13065520
-Animator:
-  serializedVersion: 3
+--- !u!114 &13065520
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 13065517}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 2ab0893f5bba9b243b65e309e78089d0, type: 3}
-  m_Controller: {fileID: 9100000, guid: 79ba6a082e0c8fa428359bfa462bff75, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19a41db962aaca14f851e52a6b728cb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardSpeed: 6
+  backwardSpeed: 4
+  horizontalSpeed: 3
 --- !u!21 &21614940
 Material:
   serializedVersion: 6
@@ -946,7 +946,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 140087247}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 354, y: 305.5, z: 0}
+  m_LocalPosition: {x: 473.5, y: 305.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 488786932}
@@ -2758,7 +2758,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 488786931}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -304, y: 275.5, z: 0}
+  m_LocalPosition: {x: -423.5, y: 275.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 140087251}
@@ -9926,7 +9926,7 @@ Transform:
   m_GameObject: {fileID: 1994817910}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 7.7276773, y: -5.5, z: -32.82}
-  m_LocalScale: {x: 3.2862856, y: 5, z: 1}
+  m_LocalScale: {x: 3.3271801, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 409588640}
   m_RootOrder: 0
