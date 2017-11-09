@@ -3087,7 +3087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3f56bf026271a43bfefaa2a379bdbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
 --- !u!21 &531787756
 Material:
   serializedVersion: 6
@@ -6055,7 +6055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3f56bf026271a43bfefaa2a379bdbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
 --- !u!1 &1161683110
 GameObject:
   m_ObjectHideFlags: 0
@@ -10007,7 +10007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3f56bf026271a43bfefaa2a379bdbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
 --- !u!1 &2049693337
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,23 +40,37 @@ public class PlayerMovement : MonoBehaviour {
 
         animator.SetFloat("vert", vert);
         animator.SetFloat("horiz", horiz);
+        float sprint = isSprinting();
+        animator.SetFloat("sprint", sprint);
+        Debug.Log("sprint " + sprint);
 
         Vector3 inputDir = Vector3.zero;
-        int speed = 0;
+        float speed = 0;
+
         // forward 
         if (vert > 0.1) {
             inputDir = playerTransform.forward;
-            speed = forwardSpeed;
+
+            if(sprint > 0.1) {
+                Debug.Log("doing a sprint speed");
+                speed = forwardSpeed * 1.25f;
+            }
+            else {
+                Debug.Log("not doing a sprint speed");
+                speed = forwardSpeed;
+            }
         }
         // backward
         else if (vert < -0.1) {
             inputDir = -playerTransform.forward;
             speed = backwardSpeed;
         }
+        // right
         else if (horiz > 0.1) {
             inputDir = playerTransform.right;
             speed = horizontalSpeed;
         }
+        // left
         else if (horiz < -0.1) {
             inputDir = -playerTransform.right;
             speed = horizontalSpeed;
@@ -64,19 +78,11 @@ public class PlayerMovement : MonoBehaviour {
 
         // Always move - This will apply gravity even if there is no input.
         move(inputDir, speed);
-
-        /*
-        float sprint = isSprinting() ? 0.2f : 0.0f;
-
-        animator.SetFloat("sprint", sprint);
-
-        Debug.Log("turn" + horiz + " walk" + vert + " sprint" + sprint);
-        Debug.Log(animator.gameObject.name);*/
     }
 
     // Apply gravity and move the player in the given direction at the given speed
-    private void move(Vector3 direction, int speed) {
-        // "gravity" - looks really bad
+    private void move(Vector3 direction, float speed) {
+        // "gravity" - looks really bad - should accelerate instead
         direction.y -= GRAVITY * Time.deltaTime;
 
         direction.x *= speed;
@@ -84,7 +90,13 @@ public class PlayerMovement : MonoBehaviour {
         controller.Move(direction * Time.deltaTime);
     }
 
-    private bool isSprinting() {
-        return false;
+    private float isSprinting() {
+        if (Input.GetButton("Fire1")) {
+            return 0.2f;
+        }
+        else {
+
+            return 0.0f;
+        }
     }
 }

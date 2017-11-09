@@ -2,7 +2,7 @@ fileFormatVersion: 2
 guid: 0ec5dc7162456f945af4e67c84d0bd8f
 timeCreated: 18446744011573954816
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     100002: Chest
@@ -160,10 +160,12 @@ ModelImporter:
     400152: TongueTip
     7400000: SprintForward_NtrlFaceFwd_1
     9500000: //RootNode
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -171,11 +173,14 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
+      copied configuration does not match position in animation file:\n\t'LeftLeg'
+      : position error = 7.696520 mm\n\t'LeftFoot' : position error = 15.233778 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -187,15 +192,15 @@ ModelImporter:
     - serializedVersion: 16
       name: SprintForward_NtrlFaceFwd_1
       takeName: _36_a_U1_M_P_SprintForward_NtrlFaceFwd__Fb_p0_No_0_1_part_01
-      firstFrame: 53
-      lastFrame: 535
+      firstFrame: 245
+      lastFrame: 271
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
