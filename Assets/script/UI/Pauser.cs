@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class Pauser : MonoBehaviour {
@@ -13,13 +12,9 @@ public class Pauser : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-
-        pauseMenu.gameObject.SetActive(false);
-    }
-
-    // Update is called once per frame
-    void Update() {
-
+        if (pauseMenu != null) {
+            pauseMenu.gameObject.SetActive(false);
+        }
     }
 
     void OnGUI() {
@@ -50,7 +45,9 @@ public class Pauser : MonoBehaviour {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        pauseMenu.gameObject.SetActive(false);
+        if (pauseMenu != null) {
+            pauseMenu.gameObject.SetActive(false);
+        }
     }
 
     public void onPlayAgain() {

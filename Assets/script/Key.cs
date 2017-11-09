@@ -32,9 +32,10 @@ public class Key : MonoBehaviour {
 
     // Show a message for 1 second saying the key was obtained
     IEnumerator showGotKey(string keyIndex) {
+        notifyText.enabled = true;
         notifyText.text = "Got Key #" + keyIndex;
         yield return new WaitForSeconds(2);
-        notifyText.text = "";
+        notifyText.enabled = false;
     }
 
     public static List<string> getGottenKeys() {

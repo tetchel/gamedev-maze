@@ -14,6 +14,7 @@ public class Exit : MonoBehaviour {
     public Text highscoreNotify;
     public InputField nameInput;
     public Button enterHighscoreButton;
+    public GameObject endOfGameButtons;
 
     public Pauser pauser;
 
@@ -34,6 +35,9 @@ public class Exit : MonoBehaviour {
             if(ranking != -1) {
                 newHighscoreDisplay.gameObject.SetActive(true);
                 highscoreNotify.text = "Your time is the " + ordinal(ranking + 1) + " best time!";
+
+                // Hide the Play Again / Exit to Menu buttons to force them to enter a name
+                endOfGameButtons.SetActive(false);
             }
         }
     }
@@ -65,5 +69,7 @@ public class Exit : MonoBehaviour {
         ScoreManager.instance().tryInsertHighscore(scoreDisplay.getScore(), name);
 
         enterHighscoreButton.interactable = false;
+
+        endOfGameButtons.SetActive(true);
     }
 }

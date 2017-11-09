@@ -1,6 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animator))]
@@ -10,19 +10,24 @@ public class PlayerMovement : MonoBehaviour {
     private Transform playerTransform;
     private CharacterController controller;
 
+    public Text tutorialDisplay;
+
     public int forwardSpeed = 5;
     public int backwardSpeed = 3;
     public int horizontalSpeed = 2;
+    public float sprintRatio = 1.15f;
 
     private const int TURN_SPEED = 4;
 
-    private const int GRAVITY = 30;
+    private float gravity;
 
     // Use this for initialization
     void Start() {
         animator = GetComponent<Animator>();
         playerTransform = GetComponent<Transform>();
         controller = GetComponent<CharacterController>();
+
+        StartCoroutine(showTutorial());
     }
 
     void LateUpdate() {
@@ -42,7 +47,6 @@ public class PlayerMovement : MonoBehaviour {
         animator.SetFloat("horiz", horiz);
         float sprint = isSprinting();
         animator.SetFloat("sprint", sprint);
-        Debug.Log("sprint " + sprint);
 
         Vector3 inputDir = Vector3.zero;
         float speed = 0;
@@ -52,11 +56,9 @@ public class PlayerMovement : MonoBehaviour {
             inputDir = playerTransform.forward;
 
             if(sprint > 0.1) {
-                Debug.Log("doing a sprint speed");
-                speed = forwardSpeed * 1.25f;
+                speed = forwardSpeed * sprintRatio;
             }
             else {
-                Debug.Log("not doing a sprint speed");
                 speed = forwardSpeed;
             }
         }
@@ -80,10 +82,17 @@ public class PlayerMovement : MonoBehaviour {
         move(inputDir, speed);
     }
 
+    // Show instructions for a brief time
+    IEnumerator showTutorial() {
+        tutorialDisplay.text = "Arrows or WASD to move!\nFire1 (shift) to sprint!";
+        yield return new WaitForSeconds(6);
+        tutorialDisplay.enabled = false;
+    }
+
     // Apply gravity and move the player in the given direction at the given speed
     private void move(Vector3 direction, float speed) {
-        // "gravity" - looks really bad - should accelerate instead
-        direction.y -= GRAVITY * Time.deltaTime;
+        gravity -= 9.81f * Time.deltaTime;
+        direction.y += gravity;
 
         direction.x *= speed;
         direction.z *= speed;
@@ -95,7 +104,6 @@ public class PlayerMovement : MonoBehaviour {
             return 0.2f;
         }
         else {
-
             return 0.0f;
         }
     }

@@ -19,8 +19,8 @@ public class ScoreManager {
         highscores = loadHighscores();
         scoreNames = loadScoreNames();
 
-        highscores.Clear();
-        scoreNames.Clear();
+        // highscores.Clear();
+        // scoreNames.Clear();
 
         while(highscores.Count < Constants.NUM_HIGHSCORES) {
             highscores.Add(DEFAULT_SCORE);
@@ -89,12 +89,14 @@ public class ScoreManager {
     private void saveHighscores() {
         for (int i = 0; i < Constants.NUM_HIGHSCORES; i++) {
             PlayerPrefs.SetFloat(HIGHSCORE_PREF + i, highscores[i]);
+            Debug.Log("saving score #" + i + " " + highscores[i]);
         }
     }
 
     private void saveScoreNames() {
         for (int i = 0; i < Constants.NUM_HIGHSCORES; i++) {
             PlayerPrefs.SetString(NAME_PREF + i, scoreNames[i]);
+            Debug.Log("saving score #" + i + " " + scoreNames[i]);
         }
     }
 
