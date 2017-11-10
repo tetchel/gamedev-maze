@@ -89,14 +89,14 @@ public class ScoreManager {
     private void saveHighscores() {
         for (int i = 0; i < Constants.NUM_HIGHSCORES; i++) {
             PlayerPrefs.SetFloat(HIGHSCORE_PREF + i, highscores[i]);
-            Debug.Log("saving score #" + i + " " + highscores[i]);
+            //Debug.Log("saving score #" + i + " " + highscores[i]);
         }
     }
 
     private void saveScoreNames() {
         for (int i = 0; i < Constants.NUM_HIGHSCORES; i++) {
             PlayerPrefs.SetString(NAME_PREF + i, scoreNames[i]);
-            Debug.Log("saving score #" + i + " " + scoreNames[i]);
+            //Debug.Log("saving score #" + i + " " + scoreNames[i]);
         }
     }
 

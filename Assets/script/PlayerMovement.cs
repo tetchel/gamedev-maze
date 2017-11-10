@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour {
 
     // Show instructions for a brief time
     IEnumerator showTutorial() {
-        tutorialDisplay.text = "Arrows or WASD to move!\nFire1 (shift) to sprint!";
+        tutorialDisplay.text = "WASD and mouse to move.\nFire1 (shift) to sprint!";
         yield return new WaitForSeconds(6);
         tutorialDisplay.enabled = false;
     }

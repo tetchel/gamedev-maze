@@ -60,9 +60,6 @@ public class Exit : MonoBehaviour {
 
     public void onEnterHighscore() {
         string name = nameInput.text;
-        if(string.IsNullOrEmpty(name)) {
-            name = "NO1";
-        }
 
         //Debug.Log("The name is " + name + " and the score is " + scoreDisplay.getScore());
 
